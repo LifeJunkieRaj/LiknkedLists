@@ -1,0 +1,22 @@
+# Do not edit the class below except
+# for the depthFirstSearch method.
+# Feel free to add new properties
+# and methods to the class.
+class Node:
+    def __init__(self, name):
+        self.children = []
+        self.name = name
+
+    def addChild(self, name):
+        self.children.append(Node(name))
+        return self
+
+        # Add current node’s value to array
+		# Look through children and add children
+		# Iterate over children array and call depthFirstSearch on each child
+		# Return array	
+	def depthFirstSearch(self, array):
+		array.append(self.name)
+		for child in self.children:
+			child.depthFirstSearch(array)
+		return array
